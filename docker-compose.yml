@@ -1,0 +1,15 @@
+version: "3.8" #See valid versions here: https://docs.docker.com/compose/compose-file/compose-versioning/
+services:
+    app:
+        image: fagi
+        container_name: app
+        build:
+            context: ./
+            target: development
+            dockerfile: Dockerfile
+        volumes:
+            - .:/var/www/html
+            - /var/www/html/node_modules
+            - /var/www/html/.next
+        ports:
+            - "3000:3000" #app
