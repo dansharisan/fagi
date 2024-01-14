@@ -16,7 +16,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {children}
+        <footer className="flex flex-col items-center w-full bg-white mt-2 mb-2">
+          <p className="text-center text-gray-500">© 2024 Fear n Greed Index. All rights reserved.</p>
+        </footer>
+        <hr />
+      </body>
     </html>
   )
 }
