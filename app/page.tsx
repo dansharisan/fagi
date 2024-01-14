@@ -89,7 +89,7 @@ export default function Home() {
 
             <GaugeComponent
               value={stockFagiValue}
-              type="radial"
+              type="grafana"
               labels={{
                 valueLabel: {
                   matchColorWithArc: true,
@@ -111,17 +111,48 @@ export default function Home() {
               arc={{
                 cornerRadius: 0,
                 colorArray: ['#EA4228', '#5BE12C'],
-                subArcs: [{ limit: 24 }, { limit: 44 }, { limit: 54 }, { limit: 74 }, { limit: 100 }],
+                subArcs: [
+                  {
+                    limit: 24,
+                    tooltip: {
+                      text: 'Extremely Fear'
+                    },
+                  },
+                  {
+                    limit: 44,
+                    tooltip: {
+                      text: 'Fear'
+                    },
+                  },
+                  {
+                    limit: 54,
+                    tooltip: {
+                      text: 'Neutral'
+                    },
+                  },
+                  {
+                    limit: 74,
+                    tooltip: {
+                      text: 'Greed'
+                    },
+                  },
+                  {
+                    limit: 100,
+                    tooltip: {
+                      text: 'Extremely Greed'
+                    },
+                  }
+                ],
                 padding: 0,
                 width: 0.3,
-                gradient: true
+                gradient: false
               }}
               pointer={{
                 elastic: false,
                 animationDelay: 0
               }}
             />
-            <p className="text-center text-xl font-semibold" style={{"color": "rgb(173, 172, 171)"}}>{stockFagiValue}</p>
+            <p className="text-center text-3xl font-semibold" style={{"color": "rgb(173, 172, 171)"}}>{stockFagiValue}</p>
           </section>
         )}
 
