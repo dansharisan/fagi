@@ -72,10 +72,10 @@ export default function Home() {
     const stockFagiValue = Math.round(stockFagiData.fear_and_greed.score);
     const stockFagiHistoricalDates =
         stockFagiData.fear_and_greed_historical.data.map(
-            (p) => new Date(p.x).toISOString().split("T")[0]
+            (p: any) => new Date(p.x).toISOString().split("T")[0]
         );
     const stockFagiHistoricalValues =
-        stockFagiData.fear_and_greed_historical.data.map((p) =>
+        stockFagiData.fear_and_greed_historical.data.map((p: any) =>
             Math.round(p.y)
         );
     const explainStockFagiValue = (value: number): string => {
@@ -93,9 +93,9 @@ export default function Home() {
     };
 
     const cryptoFagiHistoricalDates = cryptoFagiData.map(
-        (p) => new Date(p[0]).toISOString().split("T")[0]
+        (p: any) => new Date(p[0]).toISOString().split("T")[0]
     );
-    const cryptoFagiHistoricalValues = cryptoFagiData.map((p) =>
+    const cryptoFagiHistoricalValues = cryptoFagiData.map((p: any) =>
         Math.round(p[1])
     );
     const cryptoFagiValue = Math.round(
