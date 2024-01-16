@@ -1,3 +1,6 @@
+// This works as a way to disable cache
+export const revalidate = 0;
+
 export async function GET(request: Request) {
     // TODO: Implement a middleware to only allow IP of the current site
 

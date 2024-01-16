@@ -1,3 +1,5 @@
+export const revalidate = 0;
+
 export async function GET(request: Request) {
     // TODO: Implement a middleware to only allow IP of the current site
 
