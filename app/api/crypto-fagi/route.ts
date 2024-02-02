@@ -1,3 +1,4 @@
+// This works as a way to disable cache
 export const revalidate = 0;
 
 export async function GET(request: Request) {
